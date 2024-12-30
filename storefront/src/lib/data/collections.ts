@@ -14,7 +14,7 @@ export const getCollectionsList = cache(async function (
   limit: number = 100
 ): Promise<{ collections: HttpTypes.StoreCollection[]; count: number }> {
   const result = await sdk.store.collection
-    .list({ limit, offset: 0 }, { next: { tags: ["collections"] } })
+    .list({ limit, offset }, { next: { tags: ["collections"] } })
   
   console.log("Retrieved collections:", result.collections);
 
@@ -31,7 +31,7 @@ export const getCollectionByHandle = cache(async function (
 
 export const getCollectionsWithProducts = cache(
   async (countryCode: string): Promise<HttpTypes.StoreCollection[] | null> => {
-    const { collections } = await getCollectionsList(0, 3)
+    const { collections } = await getCollectionsList(0, 100)
 
     if (!collections) {
       return null

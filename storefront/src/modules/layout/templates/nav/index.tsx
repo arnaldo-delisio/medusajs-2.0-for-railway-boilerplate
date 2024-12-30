@@ -45,13 +45,6 @@ export default async function Nav() {
                   Search
                 </LocalizedClientLink>
               )}
-              <LocalizedClientLink
-                href="/account"
-                className="text-gray-600 hover:text-gray-900 text-sm"
-                data-testid="nav-account-link"
-              >
-                Account
-              </LocalizedClientLink>
             </div>
             <Suspense
               fallback={

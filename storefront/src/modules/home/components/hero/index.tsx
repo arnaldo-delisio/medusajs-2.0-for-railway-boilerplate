@@ -18,20 +18,23 @@ const Hero = () => {
         <div className="container h-full mx-auto px-4 md:px-8 lg:px-12">
           <div className="h-full flex flex-col justify-center md:justify-start md:pt-48">
             <div 
-              className="w-full md:w-1/2 text-white opacity-0 translate-x-[-20px] animate-fade-in-slide"
+              className="w-full md:w-1/2 text-white opacity-0 translate-x-[-20px] animate-fade-in-slide text-center md:text-left"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6">
-                Iconic Jewelry<br />since 2023
+                Ancient Beauty
               </h1>
-              <p className="text-lg md:text-xl mb-8 opacity-90">
-                Celebrate every facet of love with iconic gifts from KIAIA.
+              <p className="text-lg md:text-xl mb-8 opacity-90 mx-auto md:mx-0 max-w-[400px] md:max-w-none">
+                Each piece whispers stories of myths, <br/>
+                symbols, and extraordinary heritage, <br/>
+                connecting the past to the present <br/>
+                through unparalleled Italian craftsmanship.
               </p>
               <div className="group">
                 <a 
                   href="/store" 
                   className="inline-block border-2 border-white px-8 py-3 text-lg hover:bg-white hover:text-black transition-all duration-300 transform group-hover:scale-105 active:scale-95"
                 >
-                  Shop Now
+                  Explore Collection
                 </a>
               </div>
             </div>

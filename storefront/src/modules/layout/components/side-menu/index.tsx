@@ -12,9 +12,11 @@ import { HttpTypes } from "@medusajs/types"
 const SideMenuItems = {
   Home: "/",
   Store: "/store",
+  "About Us": "/about",
+  Locations: "/locations",
   Search: "/search",
   Cart: "/cart",
-}
+} as const
 
 const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
   const toggleState = useToggleState()
@@ -66,7 +68,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                               href={href}
                               className="text-3xl leading-10 text-white hover:text-gray-200"
                               onClick={close}
-                              data-testid={`${name.toLowerCase()}-link`}
+                              data-testid={`${name.toLowerCase().replace(/\s+/g, '-')}-link`}
                             >
                               {name}
                             </LocalizedClientLink>

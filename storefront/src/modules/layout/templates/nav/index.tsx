@@ -11,7 +11,7 @@ export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
 
   return (
-    <div className="sticky top-0 z-50 transition-colors duration-300 bg-black/40 [&:has(+*:hover)]:bg-black/80">
+    <div className="sticky top-0 z-50 transition-colors duration-300 bg-black/40 [&:has(+*:hover)]:bg-black/60">
       <header className="h-16">
         <nav className="max-w-[1440px] mx-auto px-8 h-full flex items-center justify-between">
           {/* Left section - Menu */}

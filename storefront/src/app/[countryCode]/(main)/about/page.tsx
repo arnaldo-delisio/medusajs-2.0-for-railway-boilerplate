@@ -1,6 +1,5 @@
 "use client"
 
-import { Metadata } from "next"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
@@ -16,11 +15,6 @@ const slideIn = {
   transition: { duration: 0.6 }
 }
 
-export const metadata: Metadata = {
-  title: "About Us | KIAIA",
-  description: "Discover the story of KIAIA, where ancient relics inspire contemporary jewelry masterpieces.",
-}
-
 export default function AboutPage() {
   return (
     <div className="py-12">
@@ -29,25 +23,43 @@ export default function AboutPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="w-full h-[60vh] relative bg-black mb-12"
+        className="w-full min-h-[80vh] relative bg-black mb-12 flex items-center"
       >
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 flex flex-col md:flex-row items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="w-full md:w-1/2 text-white mb-8 md:mb-0"
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6">
+              Iconic Jewelry<br />since 2023
+            </h1>
+            <p className="text-lg md:text-xl mb-8 opacity-90">
+              Celebrate every facet of love with iconic gifts from KIAIA.
+            </p>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <a 
+                href="/store" 
+                className="inline-block border-2 border-white px-8 py-3 text-lg hover:bg-white hover:text-black transition-colors"
+              >
+                Shop Now
+              </a>
+            </motion.div>
+          </motion.div>
+          <div className="w-full md:w-1/2" />
+        </div>
         <Image
           src={`https://${process.env.NEXT_PUBLIC_MINIO_ENDPOINT}/medusa-media/about/about-hero.jpg`}
           alt="KIAIA Craftsmanship"
           fill
-          className="object-cover opacity-80"
+          className="object-cover opacity-90"
           priority
         />
-        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-5xl md:text-6xl font-medium text-white tracking-wide"
-          >
-            Our Story
-          </motion.h1>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
       </motion.div>
 
       {/* Content Sections */}

@@ -3,10 +3,10 @@ import { Metadata } from "next"
 import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
 import FeaturedBrands from "@modules/home/components/featured-brands"
+import Newsletter from "@modules/home/components/newsletter"
 import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 import ProductRail from "@modules/home/components//featured-products/product-rail"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 export const metadata: Metadata = {
   title: "KIAIA",
@@ -43,12 +43,12 @@ export default async function Home({
           they tell stories of myths, symbols, and extraordinary heritage, connecting the eternal spirit of 
           history with modern elegance.
         </p>
-        <LocalizedClientLink 
-          href="/about"
+        <a 
+          href="/about" 
           className="inline-block bg-black text-white px-8 py-3 rounded hover:bg-gray-800 transition-colors"
         >
           Discover Our Story
-        </LocalizedClientLink>
+        </a>
       </div>
 
       <FeaturedBrands 
@@ -66,6 +66,8 @@ export default async function Home({
           )}
         </ul>
       </div>
+
+      <Newsletter />
     </>
   )
 }

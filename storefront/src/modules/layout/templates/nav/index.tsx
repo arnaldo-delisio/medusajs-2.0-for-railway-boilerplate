@@ -11,8 +11,8 @@ export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
 
   return (
-    <div className="sticky top-0 inset-x-0 z-50 bg-white">
-      <header className="h-16 border-b border-gray-200">
+    <div className="sticky top-0 z-50 transition-colors duration-300 bg-black/40 [&:has(+*:hover)]:bg-black/80">
+      <header className="h-16">
         <nav className="max-w-[1440px] mx-auto px-8 h-full flex items-center justify-between">
           {/* Left section - Menu */}
           <div className="flex-1 flex items-center">
@@ -28,7 +28,7 @@ export default async function Nav() {
               className="block hover:opacity-80 transition-opacity"
               data-testid="nav-store-link"
             >
-              <KiaiaLogo className="w-[120px] h-[40px] my-auto" />
+              <KiaiaLogo className="w-[120px] h-[40px] my-auto text-white" />
             </LocalizedClientLink>
           </div>
 
@@ -38,7 +38,7 @@ export default async function Nav() {
               {process.env.NEXT_PUBLIC_FEATURE_SEARCH_ENABLED && (
                 <LocalizedClientLink
                   href="/search"
-                  className="text-gray-600 hover:text-gray-900 text-sm"
+                  className="text-white hover:text-gray-200 text-sm"
                   scroll={false}
                   data-testid="nav-search-link"
                 >
@@ -50,7 +50,7 @@ export default async function Nav() {
               fallback={
                 <LocalizedClientLink
                   href="/cart"
-                  className="text-gray-600 hover:text-gray-900 text-sm"
+                  className="text-white hover:text-gray-200 text-sm"
                   data-testid="nav-cart-link"
                 >
                   Cart (0)

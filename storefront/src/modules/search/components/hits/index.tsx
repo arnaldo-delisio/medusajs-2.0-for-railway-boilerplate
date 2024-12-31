@@ -1,10 +1,10 @@
 import { clx } from "@medusajs/ui"
 import React from "react"
 import {
-  UseHitsProps,
   useHits,
+  UseHitsProps,
   useSearchBox,
-} from "react-instantsearch-hooks-web"
+} from "react-instantsearch"
 
 import { ProductHit } from "../hit"
 import ShowAll from "../show-all"

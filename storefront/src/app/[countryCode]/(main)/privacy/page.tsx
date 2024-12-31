@@ -1,89 +1,128 @@
-const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="mb-12">
-    <h2 className="text-2xl font-medium mb-4 text-gray-900">{title}</h2>
-    <div className="space-y-4 text-gray-600 leading-relaxed">
-      {children}
-    </div>
-  </div>
-)
+"use client"
 
-export default function PrivacyPage() {
+import { motion } from "framer-motion"
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+}
+
+export default function PrivacyPolicy() {
   return (
     <div className="py-12 md:py-16">
-      <div className="max-w-screen-lg mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-medium mb-4 text-gray-900">
+      <div className="max-w-screen-md mx-auto px-4">
+        <motion.div {...fadeIn}>
+          <h1 className="text-3xl md:text-4xl font-medium mb-8 text-gray-900">
             Privacy Policy
           </h1>
-          <p className="text-gray-600">Last Updated: February 15, 2021</p>
-        </div>
+          
+          <div className="space-y-8 text-gray-600">
+            <section>
+              <h2 className="text-xl font-medium mb-4 text-gray-900">Introduction</h2>
+              <p className="mb-4">
+                KIAIA ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. 
+                This privacy policy explains how we collect, use, and protect your personal information when you use our website.
+              </p>
+            </section>
 
-        <div className="prose max-w-none">
-          <Section title="Introduction">
-            <p>
-              KIAIA Limited respects the privacy of our users ("user" or "you"). This Privacy Policy explains how we collect, use, disclose, 
-              and safeguard your information when you visit our website www.kiaia.com, including any other media form, media channel, 
-              mobile website, or mobile application related or connected thereto (collectively, the "Site").
-            </p>
-            <p>
-              Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
-            </p>
-            <p>
-              We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert you about any changes 
-              by updating the "Last Updated" date of this Privacy Policy. Any changes or modifications will be effective immediately upon 
-              posting the updated Privacy Policy on the Site, and you waive the right to receive specific notice of each such change or modification.
-            </p>
-            <p>
-              You are encouraged to periodically review this Privacy Policy to stay informed of updates. You will be deemed to have been made 
-              aware of, will be subject to, and will be deemed to have accepted the changes in any revised Privacy Policy by your continued 
-              use of the Site after the date such revised Privacy Policy is posted.
-            </p>
-          </Section>
+            <section>
+              <h2 className="text-xl font-medium mb-4 text-gray-900">Cookie Policy</h2>
+              <p className="mb-4">
+                Our website uses cookies and similar technologies to enhance your browsing experience. We categorize cookies as follows:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 mb-4">
+                <li>
+                  <strong>Essential Cookies:</strong> Required for the website to function properly. These cannot be disabled.
+                </li>
+                <li>
+                  <strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website.
+                </li>
+                <li>
+                  <strong>Marketing Cookies:</strong> Used to deliver personalized advertisements.
+                </li>
+                <li>
+                  <strong>Preference Cookies:</strong> Remember your settings and preferences.
+                </li>
+              </ul>
+              <p className="mb-4">
+                You can manage your cookie preferences through our cookie consent banner or your browser settings.
+              </p>
+            </section>
 
-          <Section title="Collection of Your Information">
-            <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
-            
-            <h3 className="text-lg font-medium mt-6 mb-2 text-gray-900">Personal Data</h3>
-            <p>
-              Personally identifiable information, such as your name, shipping address, email address, and telephone number, and demographic 
-              information, such as your age, gender, hometown, and interests, that you voluntarily give to us when you register with the Site 
-              or when you choose to participate in various activities related to the Site. You are under no obligation to provide us with personal 
-              information of any kind, however your refusal to do so may prevent you from using certain features of the Site.
-            </p>
+            <section>
+              <h2 className="text-xl font-medium mb-4 text-gray-900">Data Collection and Use</h2>
+              <p className="mb-4">We collect and process the following types of information:</p>
+              <ul className="list-disc pl-6 space-y-2 mb-4">
+                <li>Contact information (name, email, phone number)</li>
+                <li>Shipping and billing addresses</li>
+                <li>Payment information (processed securely by our payment providers)</li>
+                <li>Browser and device information</li>
+                <li>Website usage data</li>
+              </ul>
+            </section>
 
-            <h3 className="text-lg font-medium mt-6 mb-2 text-gray-900">Financial Data</h3>
-            <p>
-              Financial information, such as data related to your payment method (e.g. valid credit card number, card brand, expiration date) 
-              that we may collect when you purchase, order, return, exchange, or request information about our services from the Site. We store 
-              only very limited, if any, financial information that we collect.
-            </p>
-          </Section>
+            <section>
+              <h2 className="text-xl font-medium mb-4 text-gray-900">Your Rights</h2>
+              <p className="mb-4">Under data protection laws, you have the following rights:</p>
+              <ul className="list-disc pl-6 space-y-2 mb-4">
+                <li>Right to access your personal data</li>
+                <li>Right to rectification of inaccurate data</li>
+                <li>Right to erasure ("right to be forgotten")</li>
+                <li>Right to restrict processing</li>
+                <li>Right to data portability</li>
+                <li>Right to object to processing</li>
+                <li>Rights related to automated decision-making</li>
+              </ul>
+              <p className="mb-4">
+                For California residents (CCPA): You have the right to know what personal information we collect and how we use it, 
+                and the right to request deletion of your personal information.
+              </p>
+            </section>
 
-          <Section title="Use of Your Information">
-            <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. 
-              Specifically, we may use information collected about you via the Site to:</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Create and manage your account</li>
-              <li>Process payments and refunds</li>
-              <li>Email you regarding your account or order</li>
-              <li>Send you a newsletter</li>
-              <li>Respond to product and customer service requests</li>
-              <li>Prevent fraudulent transactions and monitor against theft</li>
-            </ul>
-          </Section>
+            <section>
+              <h2 className="text-xl font-medium mb-4 text-gray-900">Data Retention</h2>
+              <p className="mb-4">
+                We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, 
+                including legal, accounting, or reporting requirements.
+              </p>
+            </section>
 
-          <Section title="Questions?">
-            <p>If you have questions or comments about this Privacy Policy, please contact us:</p>
-            <div className="mt-8">
-              <a 
-                href="/contact" 
-                className="inline-block bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors"
-              >
-                Contact Us
-              </a>
-            </div>
-          </Section>
-        </div>
+            <section>
+              <h2 className="text-xl font-medium mb-4 text-gray-900">Data Security</h2>
+              <p className="mb-4">
+                We implement appropriate security measures to protect your personal data against unauthorized access, 
+                alteration, disclosure, or destruction.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-medium mb-4 text-gray-900">International Transfers</h2>
+              <p className="mb-4">
+                Your data may be transferred to and processed in countries outside your country of residence. 
+                We ensure appropriate safeguards are in place to protect your information.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-medium mb-4 text-gray-900">Contact Us</h2>
+              <p className="mb-4">
+                For any privacy-related questions or to exercise your rights, please contact us at:{" "}
+                <a href="mailto:privacy@kiaia.com" className="text-black hover:underline">
+                  privacy@kiaia.com
+                </a>
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-medium mb-4 text-gray-900">Updates to This Policy</h2>
+              <p>
+                We may update this privacy policy from time to time. The latest version will always be available on our website.
+                Last updated: December 31, 2024
+              </p>
+            </section>
+          </div>
+        </motion.div>
       </div>
     </div>
   )

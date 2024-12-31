@@ -116,7 +116,7 @@ export default function AboutPage() {
           >
             <motion.div 
               variants={fadeIn}
-              className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl"
+              className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl order-last md:order-first"
             >
               <Image
                 src={`https://${process.env.NEXT_PUBLIC_MINIO_ENDPOINT}/medusa-media/about-hero.webp`}

@@ -4,6 +4,7 @@ import { Text, clx } from "@medusajs/ui"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import KiaiaLogoBlack from "@modules/common/icons/kiaia-logo-black"
+import InstagramIcon from "@modules/common/icons/instagram-icon"
 
 export default async function Footer() {
   const { collections } = await getCollectionsList(0, 6)
@@ -20,10 +21,19 @@ export default async function Footer() {
             >
               <KiaiaLogoBlack className="w-[120px] h-[40px]" />
             </LocalizedClientLink>
-            <p className="text-ui-fg-subtle text-sm max-w-[280px] leading-relaxed">
+            <p className="text-ui-fg-subtle text-sm max-w-[280px] leading-relaxed mb-4">
               At KIAIA, we transform timeless beauty of ancient relics into contemporary masterpieces, 
               celebrating the eternal spirit of history through Italian craftsmanship.
             </p>
+            <a 
+              href="https://www.instagram.com/kiaialondon/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ui-fg-subtle hover:text-ui-fg-base transition-colors inline-flex items-center gap-2"
+            >
+              <InstagramIcon className="w-5 h-5" />
+              <span className="text-sm">@kiaialondon</span>
+            </a>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {product_categories && product_categories?.length > 0 && (
@@ -135,6 +145,22 @@ export default async function Footer() {
                     className="hover:text-ui-fg-base"
                   >
                     Contact
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/delivery-returns"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Delivery & Returns
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/privacy"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Privacy Policy
                   </LocalizedClientLink>
                 </li>
               </ul>

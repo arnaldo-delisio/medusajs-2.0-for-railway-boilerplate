@@ -57,7 +57,7 @@ export default function ContactPage() {
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Have a question about a particular piece? Interested in a custom order? 
-            We'd love to hear from you. Fill out the form below and we'll get back to you shortly.
+            We&apos;d love to hear from you. Fill out the form below and we&apos;ll get back to you shortly.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function ContactPage() {
               </button>
               {status === "success" && (
                 <p className="text-green-600 text-sm mt-4">
-                  Thank you for your message. We'll get back to you soon!
+                  Thank you for your message. We&apos;ll get back to you soon!
                 </p>
               )}
               {status === "error" && (

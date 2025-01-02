@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-xl font-medium mb-4 text-gray-900">Introduction</h2>
               <p className="mb-4">
-                KIAIA ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. 
+                KIAIA respects your privacy and is committed to protecting your personal data. 
                 This privacy policy explains how we collect, use, and protect your personal information when you use our website.
               </p>
             </section>
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Right to access your personal data</li>
                 <li>Right to rectification of inaccurate data</li>
-                <li>Right to erasure ("right to be forgotten")</li>
+                <li>Right to erasure (&quot;right to be forgotten&quot;)</li>
                 <li>Right to restrict processing</li>
                 <li>Right to data portability</li>
                 <li>Right to object to processing</li>

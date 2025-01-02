@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import Image from "next/image"
 import { getBrands, Brand } from "@lib/data/brands"
 import { Spinner } from "@medusajs/icons"
@@ -24,7 +24,7 @@ const FeaturedBrands = ({
   const [duplicates, setDuplicates] = useState(2)
 
   // Calculate how many times we need to duplicate the brands to fill the screen
-  const calculateDuplicates = () => {
+  const calculateDuplicates = useCallback(() => {
     if (!containerRef.current || brands.length === 0) return
 
     const containerWidth = containerRef.current.offsetWidth
@@ -32,7 +32,7 @@ const FeaturedBrands = ({
     const totalBrandsWidth = brands.length * brandWidth
     const necessaryDuplicates = Math.ceil((containerWidth * 3) / totalBrandsWidth)
     setDuplicates(Math.max(necessaryDuplicates, 2))
-  }
+  }, [brands, gap]) // calculateDuplicates depends on brands and gap
 
   useEffect(() => {
     const loadBrands = async () => {
@@ -53,7 +53,7 @@ const FeaturedBrands = ({
     calculateDuplicates()
     window.addEventListener('resize', calculateDuplicates)
     return () => window.removeEventListener('resize', calculateDuplicates)
-  }, [brands, gap])
+  }, [brands, gap, calculateDuplicates]) // Keep all dependencies
 
   useEffect(() => {
     if (!containerRef.current || brands.length === 0) return

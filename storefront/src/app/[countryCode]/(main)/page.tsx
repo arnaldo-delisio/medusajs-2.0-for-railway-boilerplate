@@ -39,7 +39,7 @@ export default async function Home({
         <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
           At KIAIA, we transform the timeless beauty of ancient relics into contemporary masterpieces. 
           Drawing inspiration from the rich Greek-Roman cultural heritage and the historical treasures of Naples, 
-          each piece is a testament to unparalleled Italian craftsmanship. Our creations don't just adorn – 
+          each piece is a testament to unparalleled Italian craftsmanship. Our creations don&apos;t just adorn – 
           they tell stories of myths, symbols, and extraordinary heritage, connecting the eternal spirit of 
           history with modern elegance.
         </p>

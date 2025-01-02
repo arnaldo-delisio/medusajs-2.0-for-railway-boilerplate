@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { getStores, Store } from "@lib/data/stores"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -40,10 +41,13 @@ const StoreLocation = ({
     className="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl"
   >
     <div className="aspect-[4/3] overflow-hidden">
-      <img 
+    <Image 
         src={image} 
         alt={`${title} store location`}
-        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        fill
+        sizes="(max-width: 768px) 100vw, 33vw"
+        className="object-cover transition-transform duration-500 group-hover:scale-110"
+        priority={true}  // Add this if the images are above the fold
       />
     </div>
     <div className="relative p-6 text-center">
